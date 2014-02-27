@@ -4,8 +4,12 @@ Difference:
 XEON E5405 (4-core, 2GHz with HT)
  Ohne path: 6600 khash/s
  With path: 7660 khash/s = +16%
- 
-Core i5-2600K: 4100 to 8100 khash/s
+
+Xeon E5-1620 (4-core, 3.70GHz with HT):
+ Ohne path: 7000 khash/s
+ With path: 7800 khash/s = +11%
+
+Core i5-2600K (tested by Otila):
  Ohne path: 4100 khash/s
  With path: 8100 khash/s = +98%
 

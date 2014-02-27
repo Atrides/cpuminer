@@ -1,3 +1,10 @@
+Added optimization by Ronny Van Keer and Otila.
+
+Difference:
+XEON E5405 (4-core, 2GHz with HT)
+ Ohne path: 6600 khash/s
+ With path: 7660 khash/s = +16%
+
 This is a multi-threaded CPU miner for Litecoin and Bitcoin,
 and MaxCoin, forked from poolers cpuminer which is a 
 fork of Jeff Garzik's reference cpuminer.

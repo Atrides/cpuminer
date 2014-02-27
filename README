@@ -4,6 +4,11 @@ Difference:
 XEON E5405 (4-core, 2GHz with HT)
  Ohne path: 6600 khash/s
  With path: 7660 khash/s = +16%
+ 
+Core i5-2600K: 4100 to 8100 khash/s
+ Ohne path: 4100 khash/s
+ With path: 8100 khash/s = +98%
+
 
 This is a multi-threaded CPU miner for Litecoin and Bitcoin,
 and MaxCoin, forked from poolers cpuminer which is a 

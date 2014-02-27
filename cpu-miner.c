@@ -38,6 +38,7 @@
 #include <openssl/sha.h>
 #include "compat.h"
 #include "miner.h"
+#include "KeccakSponge.h"
 
 #define PROGRAM_NAME	"minerd"
 #define DEF_RPC_URL		"http://127.0.0.1:8669/"
@@ -1291,6 +1292,8 @@ void signal_handler(int sig)
 }
 #endif
 
+extern spongeState keccak512_init;
+
 int main(int argc, char *argv[])
 {
 	struct thr_info *thr;
@@ -1309,6 +1312,8 @@ int main(int argc, char *argv[])
 	pthread_mutex_init(&g_work_lock, NULL);
 	pthread_mutex_init(&stratum.sock_lock, NULL);
 	pthread_mutex_init(&stratum.work_lock, NULL);
+
+	InitSponge(&keccak512_init, 1088, 512);
 
 	flags = strncmp(rpc_url, "https:", 6)
 	      ? (CURL_GLOBAL_ALL & ~CURL_GLOBAL_SSL)

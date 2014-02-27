@@ -1,3 +1,8 @@
+Version 2.3.3 - Feb 27, 2014
+ - asm optimizations for keccak (4100 to 8100 khash/s)
+   asm code by Ronny Van Keer
+   added to cpuminer by otila from bitcointalk.org
+
 Version 2.3.2a - Feb 2014
 
 - Added support for MaxCoin (Keccak/SHA3)

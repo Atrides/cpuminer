@@ -1,21 +1,19 @@
-#include "cpuminer-config.h"
-#include "miner.h"
-
 #include <string.h>
 #include <stdint.h>
 
-#include "sph_keccak.h"
+//#include "sph_keccak.h"
+#include "cpuminer-config.h"
+#include "miner.h"
+#include "KeccakSponge.h"
+
+spongeState keccak512_init;
 
 static void keccakhash(void *state, const void *input)
 {
-    sph_keccak256_context ctx_keccak;
-    uint32_t hash[32];	
-   
-    sph_keccak256_init(&ctx_keccak);
-    sph_keccak256 (&ctx_keccak,input, 80);
-    sph_keccak256_close(&ctx_keccak, hash);
-
-    memcpy(state, hash, 32);
+    spongeState keccak512_tmp;
+    memcpy(&keccak512_tmp, &keccak512_init, sizeof(keccak512_init));
+    Absorb(&keccak512_tmp, input, 80*8);
+    Squeeze(&keccak512_tmp, state, 32*8);
 }
 
 int scanhash_keccak(int thr_id, uint32_t *pdata, const uint32_t *ptarget,

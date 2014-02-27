@@ -24,8 +24,8 @@ Dependencies:
 Basic *nix build instructions:
 	./autogen.sh	# only needed if building from git repo
 	./nomacro.pl	# only needed if building on Mac OS X or with Clang
-	./configure CFLAGS="-O3"
-	make
+	./configure CFLAGS="-O3 -march=native"
+	make -j4
 
 Notes for AIX users:
 	* To build a 64-bit binary, export OBJECT_MODE=64
